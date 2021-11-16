@@ -1,0 +1,7 @@
+hadoop jar /usr/lib/hadoop/hadoop-streaming.jar \
+-files temperature_mapper.py,temperature_reducer.py \
+-input /data/* \
+-output /outputFolder \
+-mapper 'python temperature_mapper.py' \
+-combiner 'python temperature_reducer.py' \
+-reducer 'python temperature_reducer.py'
